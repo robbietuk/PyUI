@@ -16,3 +16,11 @@ A basic starter Python project designed to work well with `uv`.
    ```bash
    uv run pytest
    ```
+4. Run static type checking:
+   ```bash
+   uv run mypy src
+   ```
+5. Install the pre-commit hook:
+   ```bash
+   uv run pre-commit install
+   ```
