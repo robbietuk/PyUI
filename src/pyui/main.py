@@ -20,16 +20,22 @@ class Model:
     
     def get_value(self) -> int:
         return self._value
+    
+    @staticmethod
+    def greet(name: str | int | None = None) -> str:
+        if name:
+            return f"Hello, {name}!"
+        return "Hello, world!"
 
 class MainWindow(QMainWindow):
 
     def __increment_button_clicked(self) -> None:
-        self._label1.setText(greet(str(self.model.increment_value())))
+        self._label1.setText(self.model.greet(self.model.increment_value()))
 
 
     def __reset_button_clicked(self) -> None:
         self.model.reset_value()
-        self._label1.setText(greet(str(self.model.get_value())))
+        self._label1.setText(self.model.greet(self.model.get_value()))
 
     def __init__(self) -> None:
         super().__init__()
@@ -39,7 +45,7 @@ class MainWindow(QMainWindow):
         central_widget: QWidget = QWidget(self)
         self.setCentralWidget(central_widget)
 
-        self._label1: QLabel = QLabel(greet(None), self)
+        self._label1: QLabel = QLabel(self.model.greet(None), self)
         self._label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
         increment_button: QPushButton = QPushButton("Increment", self)
         increment_button.clicked.connect(lambda: self.__increment_button_clicked())
