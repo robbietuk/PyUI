@@ -1,8 +1,5 @@
-from PySide6.QtWidgets import QApplication, QLabel, QLayout, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QTextEdit, QSlider, QProgressBar, QCheckBox, QRadioButton, QComboBox, QListWidget, QTableWidget, QComboBox, QSpinBox, QDoubleSpinBox, QDateEdit, QTimeEdit, QDateTimeEdit, QCalendarWidget, QLCDNumber, QDial, QScrollBar, QTabWidget, QToolBox, QStackedWidget
+from PySide6.QtWidgets import QApplication, QLabel, QLayout, QMainWindow, QWidget, QVBoxLayout, QPushButton
 from PySide6.QtCore import Qt
-
-
-
 
 def greet(name: str | None = None) -> str:
     if name:
@@ -11,7 +8,7 @@ def greet(name: str | None = None) -> str:
 
 class Model:
     def __init__(self) -> None:
-        self._value: int = 1
+        self._value: int = 0
 
     def increment_value(self) -> int:
         self._value += 1
