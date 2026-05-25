@@ -1,6 +1,9 @@
 from PySide6.QtWidgets import QApplication, QLabel, QLayout, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLineEdit, QTextEdit, QSlider, QProgressBar, QCheckBox, QRadioButton, QComboBox, QListWidget, QTableWidget, QComboBox, QSpinBox, QDoubleSpinBox, QDateEdit, QTimeEdit, QDateTimeEdit, QCalendarWidget, QLCDNumber, QDial, QScrollBar, QTabWidget, QToolBox, QStackedWidget
 from PySide6.QtCore import Qt
 
+
+
+
 def greet(name: str | None = None) -> str:
     if name:
         return f"Hello, {name}!"
@@ -15,7 +18,7 @@ class Model:
         return self.get_value()
     
     def reset_value(self) -> int:
-        self._value: int = 1
+        self._value = 1
         return self.get_value()
     
     def get_value(self) -> int:
@@ -39,7 +42,7 @@ class MainWindow(QMainWindow):
         central_widget: QWidget = QWidget(self)
         self.setCentralWidget(central_widget)
 
-        self._label1: QLabel = QLabel(greet(str(self.model.get_value())), self)
+        self._label1: QLabel = QLabel(greet(None), self)
         self._label1.setAlignment(Qt.AlignmentFlag.AlignCenter)
         increment_button: QPushButton = QPushButton("Increment", self)
         increment_button.clicked.connect(lambda: self.__increment_button_clicked())
