@@ -8,7 +8,9 @@ version = "0.1.0"
 description = "A small starter Python project managed with uv"
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "pyside6>=6.11.1",
+]
 
 [project.scripts]
 pyui = "pyui.main:main"
@@ -29,5 +31,6 @@ testpaths = ["tests"]
 python_version = "3.14"
 pretty = true
 disallow_untyped_defs = true
+disallow_untyped_globals = true
 no_implicit_optional = true
 warn_unused_configs = true
